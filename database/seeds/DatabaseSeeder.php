@@ -14,5 +14,9 @@ class DatabaseSeeder extends Seeder
         $this->call(CountriesTableSeeder::class);
         $this->call(citiesTableSeeder::class);
         $this->call(TeamsTableSeeder::class);
+        $this->call(SeasonsTableSeeder::class);
+        $this->call(PlayersTableSeeder::class);
+        $this->call(PlayerRoleTableSeeder::class);
+        $this->call(BowlingStylesTableSeeder::class);
     }
 }
