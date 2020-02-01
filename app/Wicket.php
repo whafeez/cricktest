@@ -17,6 +17,7 @@ class Wicket extends Model
         'ball_id',
         'inning_no',
         'player_out',
-        'out_type'
+        'out_type',
+        'bowled_by'
     ];
 }

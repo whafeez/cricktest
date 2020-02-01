@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Carbon\Carbon;
-class CountriesTableSeeder extends Seeder
+class SeasonsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,13 +11,12 @@ class CountriesTableSeeder extends Seeder
      */
     public function run()
     {
-    	$countries = array("India", "Pakistan", "Australia", "England", "South Africa");
-		for ($i=0; $i <count($countries); $i++) { 
-			DB::table('countries')->insert([
-	            'name' => $countries[$i],
+        	$dt = Carbon::now();
+			DB::table('seasons')->insert([
+	            'season_year' => $dt->year,
+	            'man_of_season' => 'n/a',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
         	]);
-		}
     }
 }

@@ -2,7 +2,8 @@
 
 use Illuminate\Database\Seeder;
 use Carbon\Carbon;
-class CountriesTableSeeder extends Seeder
+
+class PlayerRoleTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,10 +12,10 @@ class CountriesTableSeeder extends Seeder
      */
     public function run()
     {
-    	$countries = array("India", "Pakistan", "Australia", "England", "South Africa");
-		for ($i=0; $i <count($countries); $i++) { 
-			DB::table('countries')->insert([
-	            'name' => $countries[$i],
+    	$playersRoles = ['Captain','Keeper','Player','CaptainKeeper'];
+        for ($i=0; $i <count($playersRoles); $i++) { 
+			DB::table('player_roles')->insert([
+	            'name' => $playersRoles[$i],
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
         	]);
