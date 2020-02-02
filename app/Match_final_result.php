@@ -2,7 +2,10 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Repositories\MatchRepository;
+use Carbon\Carbon;
+use App\Model;
+use App\Match;
 
 class Match_final_result extends Model
 {
@@ -18,4 +21,15 @@ class Match_final_result extends Model
         'win_by',
         'margin'
     ];
+
+    public function parent()
+    {
+        return $this->belongsTo(Match::class, 'match_id');
+    }
+
+    public function hasParent()
+    {
+        return $this->has('parent');
+    }
+
 }
